@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
-from app.models.context import ContextRequest
+from cockroachdb_mcp_server.models.context import ContextRequest
 from sqlalchemy import text
-from app.db.db_connection import get_sqlalchemy_engine
+from cockroachdb_mcp_server.db.db_connection import get_sqlalchemy_engine
 from uuid import UUID
 import json
 

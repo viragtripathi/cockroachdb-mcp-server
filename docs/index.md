@@ -98,9 +98,7 @@ export CRDB_URL="cockroachdb://root@localhost:26257/defaultdb?sslmode=disable"
 | PUT    | `/contexts/{id}` | Update context    |
 | DELETE | `/contexts/{id}` | Delete context    |
 
-📘 [View full API reference →](docs/api.md)
-
-📘 [View hosted API Docs](https://viragtripathi.github.io/cockroachdb-mcp-server/)
+📘 [View full API reference →](api.md)
 
 ---
 
@@ -135,11 +133,3 @@ CREATE TABLE IF NOT EXISTS mcp_contexts (
 ## 🔗 Related Projects
 
 * [cockroachdb-mcp-client](https://github.com/viragtripathi/cockroachdb-mcp-client): CLI tool to manage MCP contexts, simulate LLM runs, export, and batch simulate across providers.
-
----
-
-## 🙌 Contributions
-
-This project is designed for internal and community use.
-
-PRs welcome to extend functionality (auth, deployment support, `/evaluate`, telemetry, etc.).

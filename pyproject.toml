@@ -34,7 +34,9 @@ dev = [
     "black",
     "pytest",
     "pytest-mock",
-    "httpx"
+    "httpx",
+    "mkdocs",
+    "mkdocs-material"
 ]
 
 [project.scripts]
@@ -46,4 +48,4 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["."]  # ensures both top-level dirs are found
-include = ["cockroachdb_mcp_server", "app"]
+include = ["cockroachdb_mcp_server"]
