@@ -44,7 +44,9 @@ def serve(
     log_level: str = typer.Option(
         "INFO", "--log-level", help="Logging level (DEBUG, INFO, WARN, etc.)"
     ),
-    demo_mode: bool = typer.Option(False, "--demo-mode", help="Enable demo/debug endpoints")
+    demo_mode: bool = typer.Option(
+        False, "--demo-mode", help="Enable demo/debug endpoints"
+    ),
 ):
     """Start the MCP server."""
 

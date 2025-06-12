@@ -25,7 +25,6 @@ install:
 
 format:
 	black cockroachdb_mcp_server
-	black app
 
 lint:
 	ruff cockroachdb_mcp_server

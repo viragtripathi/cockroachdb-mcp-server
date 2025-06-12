@@ -5,8 +5,10 @@ from cockroachdb_mcp_server.db.db_connection import get_sqlalchemy_engine
 
 router = APIRouter()
 
+
 class SQLQuery(BaseModel):
     query: str
+
 
 @router.get("/info")
 def get_database_info():
@@ -22,6 +24,7 @@ def get_database_info():
             "database": db,
             "version": version,
         }
+
 
 @router.post("/sql")
 def run_raw_sql(payload: SQLQuery):
@@ -40,6 +43,7 @@ def run_raw_sql(payload: SQLQuery):
     except Exception as e:
         return {"error": f"💥 Query failed: {str(e)}"}
 
+
 @router.get("/tables")
 def list_tables():
     """
@@ -49,13 +53,17 @@ def list_tables():
     engine = get_sqlalchemy_engine()
     try:
         with engine.connect() as conn:
-            result = conn.execute(text("""
+            result = conn.execute(
+                text(
+                    """
                 SELECT table_name
                 FROM information_schema.tables
                 WHERE table_schema = 'public'
                   AND table_type = 'BASE TABLE'
                 ORDER BY table_name;
-            """)).fetchall()
+            """
+                )
+            ).fetchall()
             return {"tables": [row[0] for row in result]}
     except Exception as e:
         return {"error": f"❌ Failed to list tables: {str(e)}"}

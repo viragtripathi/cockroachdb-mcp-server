@@ -3,10 +3,7 @@ from fastapi import FastAPI
 from cockroachdb_mcp_server.routes import contexts, health, debug
 from cockroachdb_mcp_server import __version__
 
-app = FastAPI(
-    title="CockroachDB MCP Server",
-    version=__version__
-)
+app = FastAPI(title="CockroachDB MCP Server", version=__version__)
 
 app.include_router(health.router)
 app.include_router(contexts.router, prefix="/contexts")
@@ -21,6 +18,7 @@ print(f"[debug] MCP_DEMO_MODE = {os.getenv('MCP_DEMO_MODE')}")
 print("[debug] Registered paths:")
 for route in app.routes:
     print(f" - {route.path}")
+
 
 @app.get("/")
 def root():
