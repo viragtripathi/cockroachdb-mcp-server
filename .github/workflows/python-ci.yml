@@ -23,6 +23,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .[dev]
 
+      - name: Start CockroachDB (latest)
+        run: |
+          docker run -d \
+            --name crdb \
+            -p 26257:26257 \
+            -p 8080:8080 \
+            cockroachdb/cockroach:latest \
+            start-single-node --insecure
+
+      - name: Set CRDB_URL environment variable
+        run: echo "CRDB_URL=cockroachdb://root@localhost:26257/defaultdb?sslmode=disable" >> $GITHUB_ENV
+
+      - name: Wait for DB to be ready
+        run: sleep 5
+
       - name: Lint with ruff (non-blocking)
         run: ruff check . || true
 
@@ -32,4 +47,5 @@ jobs:
       - name: Run tests
         run: pytest tests/
         env:
+          CRDB_URL: postgresql://root@localhost:26257/defaultdb?sslmode=disable
           MCP_DEMO_MODE: "true"
