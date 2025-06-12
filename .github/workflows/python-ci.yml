@@ -31,3 +31,5 @@ jobs:
 
       - name: Run tests
         run: pytest tests/
+        env:
+          MCP_DEMO_MODE: "true"
