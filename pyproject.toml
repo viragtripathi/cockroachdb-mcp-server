@@ -1,6 +1,6 @@
 [project]
 name = "cockroachdb-mcp-server"
-version = "0.2.1"
+version = "0.2.2"
 description = "Model Context Protocol server with CockroachDB"
 authors = [{ name = "Virag Tripathi", email = "virag.tripathi@gmail.com" }]
 license = "MIT"
@@ -47,5 +47,5 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-where = ["."]  # ensures both top-level dirs are found
-include = ["cockroachdb_mcp_server"]
+where = ["."]
+include = ["cockroachdb_mcp_server*"]
