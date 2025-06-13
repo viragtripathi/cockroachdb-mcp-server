@@ -52,6 +52,9 @@ def serve(
 
     setup_logging(log_level)
 
+    if demo_mode:
+        os.environ["MCP_DEMO_MODE"] = "true"
+
     if init_schema or os.getenv("MCP_AUTO_INIT_SCHEMA") == "true":
         typer.echo("Initializing schema...")
         run_schema_init(resolve_crdb_url())

@@ -23,12 +23,3 @@ def get_sqlalchemy_engine(opts=None):
 
     logger.debug("Constructed CRDB DSN from opts: %s", base)
     return create_engine(base)
-
-
-""""
-def get_psycopg_connection():
-    url = resolve_crdb_url()
-    pg_url = url.replace("cockroachdb://", "postgresql://")
-    print(f"[debug] Using psycopg2 connection: {pg_url}")
-    return psycopg2.connect(pg_url)
-"""
