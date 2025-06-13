@@ -4,6 +4,7 @@
 [![Python](https://img.shields.io/pypi/pyversions/cockroachdb-mcp-server)](https://pypi.org/project/cockroachdb-mcp-server/)
 [![License](https://img.shields.io/github/license/viragtripathi/cockroachdb-mcp-server)](https://github.com/viragtripathi/crdb-dump/blob/main/LICENSE)
 [![CI](https://github.com/viragtripathi/cockroachdb-mcp-server/actions/workflows/python-ci.yml/badge.svg)](https://github.com/viragtripathi/cockroachdb-mcp-server/actions)
+![MCP Compatible](https://img.shields.io/badge/MCP-compatible-blue)
 
 A Model Context Protocol (MCP) server implemented in Python using FastAPI and CockroachDB.
 
