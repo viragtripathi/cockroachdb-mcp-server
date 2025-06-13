@@ -27,7 +27,6 @@ A Model Context Protocol (MCP) server implemented in Python using FastAPI and Co
 - ✅ REST API for MCP context management (`/contexts`)
 - ✅ Schema bootstrapping via CLI flag or env var
 - ✅ CRDB URL auto-detection and dialect fix
-- ✅ ASCII banner and version info
 - ✅ Structured logging and configurable log level
 - ✅ Ready for `/run`, `/deploy`, `/evaluate` extensions
 
@@ -64,7 +63,6 @@ cockroachdb-mcp-server serve
 cockroachdb-mcp-server serve --init-schema
 cockroachdb-mcp-server serve --port 8081 --host 127.0.0.1 --reload
 cockroachdb-mcp-server --version
-cockroachdb-mcp-server --banner
 ```
 
 ---
@@ -100,6 +98,8 @@ export CRDB_URL="cockroachdb://root@localhost:26257/defaultdb?sslmode=disable"
 | DELETE | `/contexts/{id}` | Delete context    |
 
 📘 [View full API reference →](api.md)
+
+📘 [View hosted API Docs](https://viragtripathi.github.io/cockroachdb-mcp-server/)
 
 ---
 
